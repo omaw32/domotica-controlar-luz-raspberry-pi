@@ -1,0 +1,401 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+html{
+	background:url('../img/bg.png') #fefefe;
+	position:relative;
+}
+
+body{
+	color:#00ff00;
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+	font-size: 16px;
+	min-height:500px;
+	padding: 20px 0 0;
+    text-align:center;
+}
+
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
+  font-size:30px;
+  color: #00ff00;
+}
+
+table.semana {
+  text-align:center;
+  margin-left:auto; 
+  margin-right:auto;
+  font-size:15px;
+  color: #00ff00;
+  border-spacing: 5px 10px; 
+  border-collapse: separate 
+}
+
+td{
+  text-align:center;
+  vertical-align:middle;
+  /*border-right: 1px solid black;
+  border-left: 1px solid black;*/
+}
+
+td.a1{
+  text-align:left;
+  /*background-color:white; 
+  width:150px;*/
+}
+
+td.a2{
+   text-align:left;
+   border-top-width: 1px;
+   border-right-width: 0px;
+   border-bottom-width: 1px;
+   border-left-width: 0px;
+   border-style: solid;
+   color:#ffffff;
+   border-style: inset;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+hr {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px; 
+  width:48%;
+  margin: 0 auto;
+}
+
+section, footer, nav{
+	display: block;
+}
+
+
+/*----------------------------
+	The Navigation Menu
+-----------------------------*/
+
+
+#colorNav > ul{
+	width: 750px; /* Increase when adding more menu items */
+	margin:0 auto;
+}
+
+#colorNav > ul > li{ /* will style only the top level li */
+	list-style: none;
+	box-shadow: 0 0 10px rgba(100, 100, 100, 0.2) inset,1px 1px 1px #CCC;
+	display: inline-block;
+	line-height: 1;
+	margin: 1px;
+	border-radius: 3px;
+	position:relative;
+}
+
+#colorNav > ul > li > a{
+	color:inherit;
+	text-decoration:none !important;
+	font-size:24px;
+	padding: 25px;
+}
+
+#colorNav li ul{
+	position:absolute;
+	list-style:none;
+	text-align:center;
+	width:150px;
+	left:75%;
+	margin-left:-90px;
+	top:70px;
+	font:bold 22px 'Open Sans Condensed', sans-serif;
+	
+	/* This is important for the show/hide CSS animation */
+	max-height:0px;
+	overflow:hidden;
+	overflow-y:show;
+	overflow-x:show;
+	
+	-webkit-transition:max-height 0.4s linear;
+	-moz-transition:max-height 0.4s linear;
+	transition:max-height 0.4s linear;
+}
+
+#colorNav li ul li{
+	background-color:#313131;
+}
+
+#colorNav li ul li a{
+	padding:12px;
+	color:#00ff00 !important;
+	text-decoration:none !important;
+	display:block;
+}
+
+#colorNav li ul li:nth-child(odd){ /* zebra stripes 363636 */
+	background-color:#313131; 
+}
+
+#colorNav li ul li:hover{
+	background-color:#444;
+}
+
+#colorNav li ul li:first-child{
+	border-radius:3px 3px 0 0;
+	margin-top:7px;
+	position:relative;
+}
+
+#colorNav li ul li:first-child:before{ /* the pointer tip */
+	content:'';
+	position:absolute;
+	width:1px;
+	height:1px;
+	border:5px solid transparent;
+	border-bottom-color:#313131; /**/
+	left:50%;
+	top:-10px;
+	margin-left:-5px;
+}
+
+#colorNav li ul li:last-child{
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+#colorNav li:hover ul{
+	max-height:200px; /* Increase when adding more dropdown items */
+}
+
+
+/*----------------------------
+	Color Themes
+-----------------------------*/
+
+
+#colorNav li.green{
+	/* This is the color of the menu item */
+	background-color:#00c08b;
+	
+	/* This is the color of the icon */
+	color:#127a5d;
+}
+
+#colorNav li.red{		background-color:#ea5080;color:#aa2a52;}
+#colorNav li.blue{		background-color:#53bfe2;color:#2884a2;}
+#colorNav li.sky{		background-color:#4D4DFF;color:#2884a2;}
+#colorNav li.yellow{	background-color:#f8c54d;color:#ab8426;}
+#colorNav li.purple{	background-color:#df6dc2;color:#9f3c85;}
+#colorNav li.orange{    background-color:#FF8000;color:#ab8426;}
+
+/*----------------------------
+	The Buton
+-----------------------------*/
+
+#boton{
+	color:#00ff00;
+	background-color: #313131;
+	border-radius: 5px 5px 5px 5px;
+    padding-right: 50px;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    padding-top: 8px;
+    /*para Firefox*/
+	-moz-border-radius: 5px 5px 5px 5px;
+	/*para Safari y Chrome*/
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+#boton:hover{
+	background-color: #3E3E3D;
+}
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+
+
+footer{
+	background-color: #111111;
+	bottom: 0;
+	box-shadow: 0 -1px 2px #111111;
+	height: 45px;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100000;
+}
+
+footer h2{
+	color: #EEEEEE;
+	font-size: 14px;
+	font-weight: normal;
+	left: 50%;
+	margin-left: -400px;
+	padding: 13px 0 0;
+	position: absolute;
+	width: 540px;
+}
+
+footer h2 i{
+	font-style:normal;
+	color:#888;
+}
+
+footer a.tzine,a.tzine:visited{
+	color: #999999;
+	font-size: 12px;
+	left: 50%;
+	margin: 16px 0 0 110px;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+}
+
+footer a i{
+	color:#ccc;
+	font-style: normal;
+}
+
+footer a i b{
+	color:#c92020;
+	font-weight: normal;
+}
+
+.pe {
+  font-size:35px;
+  text-align:center;
+  color: #00ff00; 
+  font-style: italic;
+}
+
+.pa{
+  color:#00a1d2;
+  font-size:15px;
+  text-align:center; 
+  margin:auto;
+}
+
+.po{
+  color:#00a1d2;
+  font-size:15px;
+  text-align:left; 
+  margin:auto;
+}
+
+.domingo{
+  color:#ff0000;
+  font-size:15px;
+  text-align:left; 
+  margin:auto;
+}
+
+
+/*----------------------------
+	    Modal
+-----------------------------*/
+
+
+.modalmask {
+	position: fixed;
+	font-family: Arial, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalmask:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.modalbox{
+	width: 400px;
+	position: relative;
+	padding: 5px 20px 13px 20px;
+	background: #fff;
+	border-radius:3px;
+	-webkit-transition: all 500ms ease-in;
+	-moz-transition: all 500ms ease-in;
+	transition: all 500ms ease-in;
+	
+}
+
+.movedown {
+	margin: 0 auto;
+}
+.rotate {
+	margin: 10% auto;
+	-webkit-transform: scale(-5,-5); 
+	transform: scale(-5,-5);
+}
+.resize {
+	margin: 10% auto;
+	width:0;
+	height:0;
+
+}
+.modalmask:target .movedown{		
+	margin:10% auto;
+}
+.modalmask:target .rotate{		
+	transform: rotate(360deg) scale(1,1);
+    -webkit-transform: rotate(360deg) scale(1,1);
+}
+
+.modalmask:target .resize{
+	width:400px;
+	height:200px;
+}
+
+
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: 1px;
+	text-align: center;
+	top: 1px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius:3px;
+	font-size:16px;
+}
+
+.close:hover { 
+	background: #FAAC58; 
+	color:#222;
+}
